@@ -1,6 +1,6 @@
 # 🚀 Lecoeurdelest's Dotfiles
 
-Personal dotfiles for macOS - modular and scalable.
+Personal dotfiles for macOS
 
 > **Author**: [Lecoeurdelest](https://github.com/Lecoeurdelest)
 
