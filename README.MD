@@ -58,15 +58,6 @@ k/kgp/kgs/klf
 tf/tfi/tfp/tfa
 ```
 
-## 🎨 Key Functions
-
-```bash
-cursor [path]     # Open Cursor
-mkcd <dir>        # mkdir + cd
-extract <file>    # Extract archives
-serve [port]      # HTTP server
-```
-
 ## 🔄 Update
 
 ```bash
