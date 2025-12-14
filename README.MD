@@ -21,8 +21,8 @@ dotfiles/
 ## 🚀 Installation
 
 ```bash
-git clone https://github.com/Lecoeurdelest/dotfiles.git ~/Documents/pancake-quy/dotfiles
-cd ~/Documents/pancake-quy/dotfiles
+git clone https://github.com/Lecoeurdelest/dotfiles.git ~/Documents/dotfiles
+cd ~/Documents/dotfiles
 ./bootstrap.sh && ./install.sh
 ```
 
@@ -70,7 +70,7 @@ serve [port]      # HTTP server
 ## 🔄 Update
 
 ```bash
-cd ~/Documents/pancake-quy/dotfiles
+cd ~/Documents/dotfiles
 git pull && ./install.sh && reload
 ```
 

@@ -2,7 +2,7 @@
 
 set -e
 
-DOTFILES_DIR="$HOME/Documents/pancake-quy/dotfiles"
+DOTFILES_DIR="$HOME/Documents/dotfiles"
 DOTFILES_BACKUP_DIR="$HOME/.dotfiles.backup.$(date +%Y%m%d_%H%M%S)"
 
 echo "🚀 Bootstrapping dotfiles..."

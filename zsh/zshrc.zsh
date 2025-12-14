@@ -4,7 +4,7 @@
 # Modular Zsh Configuration
 # =============================================================================
 
-DOTFILES_DIR="$HOME/Documents/pancake-quy/dotfiles"
+DOTFILES_DIR="$HOME/Documents/dotfiles"
 
 # Oh My Zsh configuration
 export ZSH="$HOME/.oh-my-zsh"
