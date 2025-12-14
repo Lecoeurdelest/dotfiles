@@ -18,11 +18,6 @@ brew "fzf"
 # Development
 brew "postgresql@15"
 
-brew "node"
-brew "python@3.11"
-brew "go"
-brew "rust"
-
 # Casks (GUI applications)
 cask "visual-studio-code"
 cask "docker"
