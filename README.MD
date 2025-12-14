@@ -47,15 +47,6 @@ chmod +x tools/aws/install.sh
 # Navigation
 dotfiles    # cd to dotfiles
 reload      # reload config
-
-# Git
-gs/ga/gc/gp/gl/gd
-
-# Kubernetes
-k/kgp/kgs/klf
-
-# Terraform
-tf/tfi/tfp/tfa
 ```
 
 ## 🔄 Update
