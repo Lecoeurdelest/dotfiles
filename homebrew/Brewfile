@@ -7,7 +7,6 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 
 # Essential tools
-brew "git"
 brew "wget"
 brew "curl"
 brew "tree"
