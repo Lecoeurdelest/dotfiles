@@ -14,3 +14,15 @@ if command -v docker &> /dev/null && [[ -f "$HOME/.docker/completions/docker.zsh
     fpath=(~/.docker/completions $fpath)
     autoload -Uz compinit && compinit
 fi
+
+# =============================================================================
+# docker-sync Configuration
+# =============================================================================
+
+# docker-sync completion
+if command -v docker-sync &> /dev/null; then
+    # Add docker-sync completions if available
+    if [[ -f "$HOME/.docker-sync/completions/docker-sync.zsh" ]]; then
+        source "$HOME/.docker-sync/completions/docker-sync.zsh"
+    fi
+fi

@@ -30,14 +30,12 @@ install_module "homebrew"
 install_module "zsh"
 
 echo "=== Language Modules ==="
-install_module "lang/java"
-install_module "lang/python"
+install_module "lang/ruby"
+install_module "lang/elixir"
 install_module "lang/node"
 
 echo "=== Tool Modules ==="
 install_module "tools/docker"
-install_module "tools/kubectl"
-install_module "tools/terraform"
 
 echo ""
 echo "All modules installed!"
