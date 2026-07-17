@@ -13,7 +13,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # Dotfiles management
-alias dotfiles='cd ~/Documents/dotfiles'
+alias dotfiles='cd "$DOTFILES_DIR"'
 alias reload='source ~/.zshrc'
 
 # System

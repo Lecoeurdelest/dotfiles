@@ -2,7 +2,7 @@
 
 set -e
 
-DOTFILES_DIR="$HOME/Documents/dotfiles"
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTFILES_BACKUP_DIR="$HOME/.dotfiles.backup.$(date +%Y%m%d_%H%M%S)"
 
 echo "🚀 Bootstrapping dotfiles..."

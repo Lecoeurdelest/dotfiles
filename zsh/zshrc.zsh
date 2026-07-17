@@ -4,7 +4,7 @@
 # Modular Zsh Configuration
 # =============================================================================
 
-DOTFILES_DIR="$HOME/Documents/dotfiles"
+DOTFILES_DIR="${DOTFILES_DIR:-${0:A:h:h}}"
 
 # Oh My Zsh configuration
 export ZSH="$HOME/.oh-my-zsh"

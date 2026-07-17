@@ -4,8 +4,8 @@ set -e
 
 echo "Setting up Java..."
 
-# Check if Java is installed
-if command -v java &> /dev/null; then
+# Check if Java is installed. macOS may provide a java shim even without a JDK.
+if java -version &> /dev/null; then
     echo "Java is installed: $(java -version 2>&1 | head -n 1)"
 else
     echo "Java not found"

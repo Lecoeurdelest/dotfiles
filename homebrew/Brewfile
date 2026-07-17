@@ -3,8 +3,7 @@
 # =============================================================================
 
 # Taps
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
+tap "hashicorp/tap"
 
 # Essential tools
 brew "wget"
@@ -16,10 +15,13 @@ brew "fzf"
 
 # Development
 brew "postgresql@15"
+brew "node"
+brew "hashicorp/tap/terraform"
 
 # Casks (GUI applications)
+cask "temurin"
 cask "visual-studio-code"
-cask "docker"
+cask "docker-desktop"
 cask "google-chrome"
 cask "iterm2"
 cask "postman"
