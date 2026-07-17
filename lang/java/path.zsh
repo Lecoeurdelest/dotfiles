@@ -17,6 +17,10 @@ elif [[ -d "/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home" ]]; then
     export PATH="$JAVA_HOME/bin:$PATH"
 # Fallback to system java_home
 elif command -v /usr/libexec/java_home &> /dev/null; then
-    export JAVA_HOME="$(/usr/libexec/java_home 2>/dev/null)"
-    export PATH="$JAVA_HOME/bin:$PATH"
+    __java_home="$(/usr/libexec/java_home 2>/dev/null)"
+    if [[ -n "$__java_home" && -d "$__java_home/bin" ]]; then
+        export JAVA_HOME="$__java_home"
+        export PATH="$JAVA_HOME/bin:$PATH"
+    fi
+    unset __java_home
 fi

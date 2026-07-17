@@ -15,7 +15,11 @@ fi
 
 # Global node_modules
 if command -v npm &> /dev/null; then
-    export PATH="$(npm config get prefix)/bin:$PATH"
+    __npm_prefix="$(npm config get prefix 2>/dev/null)"
+    if [[ -n "$__npm_prefix" && -d "$__npm_prefix/bin" ]]; then
+        export PATH="$__npm_prefix/bin:$PATH"
+    fi
+    unset __npm_prefix
 fi
 
 # Yarn global

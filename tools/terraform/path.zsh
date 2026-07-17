@@ -4,12 +4,18 @@
 # Terraform Configuration
 # =============================================================================
 
+__path_prepend_once() {
+    [[ -d "$1" ]] || return
+    case ":$PATH:" in
+        *":$1:"*) ;;
+        *) export PATH="$1:$PATH" ;;
+    esac
+}
+
 # Homebrew installs HashiCorp tools here on Apple Silicon.
-if [[ -d "/opt/homebrew/bin" ]]; then
-    export PATH="/opt/homebrew/bin:$PATH"
-fi
+__path_prepend_once "/opt/homebrew/bin"
 
 # Homebrew installs HashiCorp tools here on Intel Macs.
-if [[ -d "/usr/local/bin" ]]; then
-    export PATH="/usr/local/bin:$PATH"
-fi
+__path_prepend_once "/usr/local/bin"
+
+unset -f __path_prepend_once

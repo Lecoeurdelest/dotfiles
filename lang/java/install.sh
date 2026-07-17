@@ -7,6 +7,12 @@ echo "Setting up Java..."
 # Check if Java is installed. macOS may provide a java shim even without a JDK.
 if java -version &> /dev/null; then
     echo "Java is installed: $(java -version 2>&1 | head -n 1)"
+elif [ -x "/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home/bin/java" ]; then
+    echo "Java is installed: $(/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home/bin/java -version 2>&1 | head -n 1)"
+    echo "JAVA_HOME will be set by lang/java/path.zsh"
+elif [ -x "/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home/bin/java" ]; then
+    echo "Java is installed: $(/usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home/bin/java -version 2>&1 | head -n 1)"
+    echo "JAVA_HOME will be set by lang/java/path.zsh"
 else
     echo "Java not found"
     echo "Install Java with: brew install openjdk"

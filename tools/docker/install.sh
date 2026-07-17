@@ -9,7 +9,7 @@ if command -v docker &> /dev/null; then
     echo "Docker is installed: $(docker --version)"
 else
     echo "Docker not found"
-    echo "Install Docker with: brew install --cask docker"
+    echo "Install Docker with: brew install --cask docker-desktop"
 fi
 
 # Check if Docker Desktop app exists

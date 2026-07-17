@@ -4,20 +4,45 @@
 # Python & Conda Configuration
 # =============================================================================
 
-# Conda initialization
-if [[ -f "/opt/homebrew/Caskroom/miniconda/base/bin/conda" ]]; then
-    __conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
+__path_prepend_once() {
+    [[ -d "$1" ]] || return
+    case ":$PATH:" in
+        *":$1:"*) ;;
+        *) export PATH="$1:$PATH" ;;
+    esac
+}
+
+__miniconda_home=""
+for __conda_candidate in \
+    "/opt/homebrew/Caskroom/miniconda/base" \
+    "/usr/local/Caskroom/miniconda/base" \
+    "$HOME/miniconda3"
+do
+    if [[ -x "$__conda_candidate/bin/conda" ]]; then
+        __miniconda_home="$__conda_candidate"
+        break
+    fi
+done
+
+# Prefer Miniconda over system Python when it is installed.
+if [[ -n "$__miniconda_home" ]]; then
+    __conda_setup="$("$__miniconda_home/bin/conda" "shell.zsh" "hook" 2> /dev/null)"
+    if [[ $? -eq 0 && -n "$__conda_setup" ]]; then
         eval "$__conda_setup"
     else
-        if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-            . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+        if [[ -f "$__miniconda_home/etc/profile.d/conda.sh" ]]; then
+            . "$__miniconda_home/etc/profile.d/conda.sh"
         else
-            export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
+            __path_prepend_once "$__miniconda_home/condabin"
         fi
     fi
+    __path_prepend_once "$__miniconda_home/condabin"
+    __path_prepend_once "$__miniconda_home/bin"
     unset __conda_setup
 fi
 
 # Python user packages
-export PATH="$HOME/.local/bin:$PATH"
+__path_prepend_once "$HOME/.local/bin"
+
+unset -f __path_prepend_once
+unset __miniconda_home __conda_candidate
