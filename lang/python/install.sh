@@ -27,4 +27,11 @@ else
     echo "Python3 not found"
 fi
 
+if command -v poetry &> /dev/null; then
+    echo "Poetry is installed: $(poetry --version)"
+else
+    echo "Poetry not found"
+    echo "Install Poetry with: brew install poetry"
+fi
+
 echo "Python setup complete"

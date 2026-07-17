@@ -6,10 +6,8 @@
 
 __path_prepend_once() {
     [[ -d "$1" ]] || return
-    case ":$PATH:" in
-        *":$1:"*) ;;
-        *) export PATH="$1:$PATH" ;;
-    esac
+    path=("${path[@]:#$1}")
+    path=("$1" $path)
 }
 
 __miniconda_home=""

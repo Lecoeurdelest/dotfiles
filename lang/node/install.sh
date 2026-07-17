@@ -20,4 +20,11 @@ if command -v yarn &> /dev/null; then
     echo "Yarn is installed: $(yarn --version)"
 fi
 
+if command -v pnpm &> /dev/null; then
+    echo "pnpm is installed: $(pnpm --version)"
+else
+    echo "pnpm not found"
+    echo "Install pnpm with: brew install pnpm"
+fi
+
 echo "Node.js setup complete"

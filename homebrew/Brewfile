@@ -16,6 +16,8 @@ brew "fzf"
 # Development
 brew "postgresql@15"
 brew "node"
+brew "pnpm"
+brew "poetry"
 brew "openjdk"
 brew "hashicorp/tap/terraform"
 
