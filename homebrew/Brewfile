@@ -16,10 +16,10 @@ brew "fzf"
 # Development
 brew "postgresql@15"
 brew "node"
+brew "openjdk"
 brew "hashicorp/tap/terraform"
 
 # Casks (GUI applications)
-cask "temurin"
 cask "visual-studio-code"
 cask "docker-desktop"
 cask "google-chrome"

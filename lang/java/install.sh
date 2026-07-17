@@ -9,7 +9,7 @@ if java -version &> /dev/null; then
     echo "Java is installed: $(java -version 2>&1 | head -n 1)"
 else
     echo "Java not found"
-    echo "Install Java with: brew install --cask temurin"
+    echo "Install Java with: brew install openjdk"
 fi
 
 # Check for Amazon Corretto
