@@ -4,15 +4,6 @@
 # Custom Functions
 # =============================================================================
 
-# Open Cursor editor
-cursor() {
-  if [ $# -eq 0 ]; then
-    open -a Cursor .
-  else
-    open -a Cursor "$@"
-  fi
-}
-
 # Create directory and cd into it
 mkcd() {
     mkdir -p "$1" && cd "$1"
